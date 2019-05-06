@@ -84,28 +84,58 @@
   
   \subsection{Microphysics}
   
-    This new network is now used in Microphysics. There is a unit test in Microphysics referred to as {\tt burn\_cell} which is simulates the chemical evolution in one zone of a star. This test is first used to what tolerance will optimize results and reduce computation time in this simulation. Tolerances are parameters used to gauge how accurately the equation solvers in the simulation are doing their job. A smaller tolerance typically leads to a more precise answer but takes more computer time. For this reason, a tolerance of $10^{-12}$ was treated as an exact answer and the tolerances of $10^{-3}$, $10^{-6}$, and $10^{-9}$ were tested. 
-    
-    To test these tolerances, a fraction of  \ce{^4He}, \ce{^{12}C}, and \ce{^{16}O} were initialized in one zone as modeled by the {\tt burn\_cell} unit test. The zone is heated so that the three elements begin to burn. Simulations are run with a tolerance of $10^{-3}$, $10^{-6}$, $10^{-9}$, and $10^{-12}$. The relative error in each element's mass fraction, $X$, between the 3 former simulations and the $10^{-12}$ simulation, as defined by 
-    
-    \begin{equation}
-      \sigma_X = \frac{X_{10^{-12}} - X_{\text{former}}}{X_{10^{-12}}} \text{    , }
-      \label{eq:relativeerror}
-    \end{equation}
-    
-    for each point in time during the simulation. This relative error in mass fraction is plotted as a function of time for each of the three testing simulations and can be seen in Figure~\ref{fig:relativeerror}.
-    
-  \begin{figure}
-    \centering
-    \includegraphics[width=5in]{images/react_aprox13_test13_ureca_tol-rel_xn1.png}
-    \caption{}
-    \label{fig:relativeerror}
-  \end{figure}  
+    \subsection{Testing Simulation Equation Tolerances}
   
-  placeholder
+      This new network is now used in Microphysics. There is a unit test in Microphysics referred to as {\tt burn\_cell} which is simulates the chemical evolution in one zone of a star. This test is first used to what tolerance will optimize results and reduce computation time in this simulation. Tolerances are parameters used to gauge how accurately the equation solvers in the simulation are doing their job. A smaller tolerance typically leads to a more precise answer but takes more computer time. For this reason, a tolerance of $10^{-12}$ was treated as an exact answer and the tolerances of $10^{-3}$, $10^{-6}$, and $10^{-9}$ were tested. 
+     
+      To test these tolerances, a fraction of  \ce{^4He}, \ce{^{12}C}, and \ce{^{16}O} were initialized in one zone as modeled by the {\tt burn\_cell} unit test. The zone is heated so that the three elements begin to burn. Simulations are run with a tolerance of $10^{-3}$, $10^{-6}$, $10^{-9}$, and $10^{-12}$. The relative error in each element's mass fraction, $X$, between the 3 former simulations and the $10^{-12}$ simulation, as defined by 
+    
+      \begin{equation}
+        \sigma_X = \frac{X_{10^{-12}} - X_{\text{former}}}{X_{10^{-12}}} \text{    , }
+        \label{eq:relativeerror}
+      \end{equation}
+    
+      for each point in time during the simulation. This relative error in mass fraction is plotted as a function of time for each of the three testing simulations and can be seen in Figure~\ref{fig:relativeerror}.
+    
+      \begin{figure}
+        \centering
+        \includegraphics[width=5in]{images/react_aprox13_test13_ureca_tol-rel_xn1.png}
+        \caption{}
+        \label{fig:relativeerror}
+      \end{figure}  
+  
+      From Figure~\ref{fig:relativeerror}, one can see that the solid lines, corresponding with the simulation using a tolerance of $10^{-9}$, are consistently the lowest. The corresponding run did not require very much run time and produced low-error results, therefore it is concluded that a tolerance of $10^{-9}$ is acceptable for the codes going forwards. 
+  
+    \subsection{Using Mass Fraction Evolution to Justify Motivation}
+    
+      The next step with the {\tt burn\_cell} tests is to test if the {\tt subch} network is producing results worth investigating. The main ingredients to the simulation that Shen \& Bildsten encouraged were \ce{^{14}C} and \ce{^{14}N}. % Cite Shen and Bildsten
+      Figure~\ref{fig:microphysicsX} shows the time evolution of mass fractions, $X$, for each of the eleven isotopes in the {\tt subch} network for three different {\tt burn\_cell} simulations. The solid line corresponds to a simulation without \ce{^{14}C} and \ce{^{14}N}, the short dashed line adds some \ce{^{14}N} and the long dashed line adds both \ce{^{14}C} and \ce{^{14}N}. If this Shen \& Bildsten's theory is correct, we shouldn't see 11 clean and solid lines, but many more solid and dashed lines. Indeed, Figure~\ref{fig:microphysicsX} shows this and pushes us to take these simulations to the next level.
+      
+      \begin{figure}
+        \centering
+        \includegraphics[width=5in]{images/subch_nC14nN14_xn_tol-10.png}
+        \caption{}
+        \label{fig:microphysicsX}
+      \end{figure} 
+      
+      In addition to the mass fraction evolution, the rate of energy generated by the zone in the {\tt burn\_cell} simulation is plotted as a function of time. In Figure~\ref{fig:energygeneration}, the solid line again refers to the a simulation without \ce{^{14}C} and \ce{^{14}N}, the short dashed line to a simulation with \ce{^{14}N}, and the long dashed line to a simulation with both \ce{^{14}C} and \ce{^{14}N}. From Figure~\ref{fig:energygeneration} one can see that the simulations with \ce{^{14}C} and \ce{^{14}N}, the energy generated by this zone peaks sooner and has a lower peak. This is a substantial effect and further supports the motivation of Shen \& Bildsten. %Cite Shen and Bildsten
+      
+      \begin{figure}
+        \centering
+        \includegraphics[width=5in]{images/subch_nC14nN14_edot_tol-10.png}
+        \caption{}
+        \label{fig:energygeneration}
+      \end{figure} 
   
   \subsection{Castro}
+    
+    \subsection{1-Dimensional Simulations}
+    
+      placeholder
+    
+    \subsection{2-Dimensional Simulations}
   
+      placeholder
   
 \section{Conclusion}
 
