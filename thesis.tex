@@ -6,6 +6,7 @@
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
+\usepackage[version=4]{mhchem}
 
 %2SetFonts
 
@@ -58,19 +59,50 @@
 \section{Motivation}
   
   As previously mentioned, Type Ia SNe are critical to measuring large astronomical distances. Observational astronomers rely heavily on accurate estimations for what they observe to make scientific claims to the data. In a 2016 paper by Lars Bildsten and Kenneth Shen, they theorized that the three elements used to simulate Type Ia supernovae was not enough to accurately simulate the spectra and light curve of a Type Ia supernovae. %Cite Shen and Bildsten
-  Additionally, not all Type Ia SNe occur when the WD becomes a total of 1.4 $M_{\odot}$
+  Additionally, not all Type Ia SNe occur when the WD becomes a total of 1.4 $M_{\odot}$, sometimes the explosions set off, they detonate, before the Chandrasekhar mass is reached. This means that thesIt is critical that accurate models of Type Ia SNe are obtained in order for observational astronomers to learn about the universe accurately. 
   
-  We have simulations of 
-  
-  
+  The goal for this research is to first create a nuclear reaction network following Shen and Bildsten's guidelines, test the network in Microphysics to see if there is a substantial change, then to run an old model and the new model with Castro using a sub-Chandrasekhar mass star to see how the results change. If the change is drastic, then we will have more science to do. 
   
 \section{Simulation Results}
 
   \subsection{Pynucastro}
     
+    {\tt Aprox13} is a nuclear reaction network composed of 13 element isotopes. It begins with Helium (\ce{^4He} also known as an $\alpha$ particle) adds two \ce{^4He} to get a Carbon (\ce{^{12}C}) and one photon ($\gamma$) then continues to add $\alpha$ particles until Iron (\ce{^{56}Fe}) and a lot more $\gamma$'s are obtained. Since each isotope is connected by an $\alpha$ particle, this is called an $\alpha$ chain and earns the name 13 from the 13 isotopes on the $\alpha$ chain that it possesses. All elements that are \ce{^{24}Mg} and heavier are also connected through a process where an $\alpha$ particle hits an isotope and creates a new particle but kicks out a proton, then a different proton hits the new nucleus and one of those $\alpha$ chain isotopes are created along with a $\gamma$. In total the {\tt aprox13} network contains 22 isotopes and has proven to be a good model of stellar evolution, but Shen \& Bildsten suggest developing the reaction network more for Type Ia SNe. %Cite the heck out of Frank Timmes
+    
+    The study began through the use of Pynucastro to create the {\tt subch} network, standing for sub-Chandrasekhar. The network is composed of 8 reactions, each as suggested by Shen \& Bildsten. %Cite Shen and Bildsten
+    
+    \begin{align}
+            \ce{3 ^4He &->  ^{12}C + 2\gamma } \\ 
+            \ce{^{12}C + ^4He &->  ^{16}O + \gamma } \\
+            \ce{^{14}N + ^4He &->  ^{18}F + \gamma } \label{chemeq:1.1} \\
+            \ce{^{18}F + ^4He &-> ^{21}Ne +  \text{p}} \label{chemeq:1.2} \\
+            \ce{^{12}C + p+ &-> ^{13}N + \gamma } \label{chemeq:2.1} \\
+            \ce{^{13}N + ^4He &-> ^{16}O + \text{p}} \label{chemeq:2.2} \\ 
+            \ce{^{16}O + ^4He &-> ^{20}Ne + \gamma } \\
+            \ce{^{14}C + ^4He &-> ^{18}O + \gamma } \label{chemeq:3.2}
+    \end{align}
   
   \subsection{Microphysics}
   
+    This new network is now used in Microphysics. There is a unit test in Microphysics referred to as {\tt burn\_cell} which is simulates the chemical evolution in one zone of a star. This test is first used to what tolerance will optimize results and reduce computation time in this simulation. Tolerances are parameters used to gauge how accurately the equation solvers in the simulation are doing their job. A smaller tolerance typically leads to a more precise answer but takes more computer time. For this reason, a tolerance of $10^{-12}$ was treated as an exact answer and the tolerances of $10^{-3}$, $10^{-6}$, and $10^{-9}$ were tested. 
+    
+    To test these tolerances, a fraction of  \ce{^4He}, \ce{^{12}C}, and \ce{^{16}O} were initialized in one zone as modeled by the {\tt burn\_cell} unit test. The zone is heated so that the three elements begin to burn. Simulations are run with a tolerance of $10^{-3}$, $10^{-6}$, $10^{-9}$, and $10^{-12}$. The relative error in each element's mass fraction, $X$, between the 3 former simulations and the $10^{-12}$ simulation, as defined by 
+    
+    \begin{equation}
+      \sigma_X = \frac{X_{10^{-12}} - X_{\text{former}}}{X_{10^{-12}}} \text{    , }
+      \label{eq:relativeerror}
+    \end{equation}
+    
+    for each point in time during the simulation. This relative error in mass fraction is plotted as a function of time for each of the three testing simulations and can be seen in Figure~\ref{fig:relativeerror}.
+    
+  \begin{figure}
+    \centering
+    \includegraphics[width=5in]{images/react_aprox13_test13_ureca_tol-rel_xn1.png}
+    \caption{}
+    \label{fig:relativeerror}
+  \end{figure}  
+  
+  placeholder
   
   \subsection{Castro}
   
