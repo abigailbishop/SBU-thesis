@@ -1,36 +1,57 @@
-\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
-%\geometry{landscape}                		% Activate for rotated page geometry
-%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
-\usepackage{amssymb}
+\documentclass[preprint]{aastex62}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{natbib}
+%\usepackage{subcaption}
+\bibliographystyle{aasjournal}
 \usepackage[version=4]{mhchem}
 
-%2SetFonts
+\begin{document}
 
-%SetFonts
-
-
-\title{Expanding the Modeling of Type Ia Supernovae}
-\author{Abigail Bishop}
+\title{AST443 - Lab 0 - Properties of CCD Cameras}
+\author{110508748}
 %\date{}							% Activate to display a given date or no date
 
-\begin{document}
-\maketitle
+% General Guidelines
+  % Write it like a scientific paper
+  % Every sentence is precise and meaninful
+  % Write with good English
+  % UNDERSTAND the analysis and make that clear
+  % Contain all information necessary to reproduce my analysis and results
+  % Be concise
+  % If you find yourself repeating sentences, consider making a table
+  % Make sure there's a red thread
+  
+  % Figures
+    % Ensure they're legible when printed out
+    % Contain information (don't show a black box and say 'Look at my dark frame')
+    % Make sure the figure caption describes the figure adaquately
+    % Make sure your results are reported in the body of the text, not just shown in a figure
 
 \begin{abstract}
-
+  % The abstract contains a summary of the paper.
+  % A brief description of your observations
+  % Your results!
+  % Gets the point across
+  % Good understanding of the subject and of your results
+  % NOT lengthy introduction to the problem. No sentences like 'the aim was to learn about CCDs'. No information not in the main body of the paper
+  
   Type Ia Supernovae are some of the most important astronomical events in the universe as they act as yard sticks that are light years and light years long. However, a recent paper by Ken Shen and Lars Bildsten reveals that the simulations which make these yard sticks so valuable are not fully developed and may be leading to inaccuracies in measurements. This report details the process by which nuclear astrophysics codes like Pynucastro, Microphysics, and Castro are used to test the claims of Shen \& Bildsten by simulating Type Ia Supernovae. It was found that... % gotta fill that in one in when I get results. 
   
   % Perhaps one last sentence here. -AB
-  
+
+  Abstract
+
 \end{abstract}
 
+\pagebreak
 
 \section{Introduction}
-  
+
+  % Serves as a review of the subject of the paper
+  % Needs to discuss and cite the appropriate literature 
+  % Good understanding of the subject and of your results
+
   Supernovae (SNe), the explosive deaths of stars, are some of the most spectacular events in the universe. A special kind of supernovae, the Type Ia Supernovae, is especially notable for its use as an astronomical measure of distance. Type Ia supernovae occur when two stars are in orbit around each other. At least one star has already died once and has become a white dwarf (WD) usually with a mass around that of our sun, called a solar mass ($M_{\odot}$). Material in the outer shells of the WD's partner can be stolen by the WD through its gravitational field. Once the WD has taken enough material to reach a mass of 1.4 times $M_{\odot}$, it explodes. This 1.4$M_{\odot}$ is called the Chandrasekhar mass. The explosion releases light of many colors and other wavelengths. The graph plotting how bright each wavelength of light is in the explosion is the spectrum. Since these stars usually have the same mass and elemental composition when they explode, the explosions have the same brightness and uniquely Type Ia SNe spectrum. 
   
   An observational astronomer can observe an event resembling a Type Ia SNe and use its spectrum to confirm it is a Type Ia Supernovae. The astronomer can then take the brightness of the explosion and use it to calculate how far away the supernovae is. By using Type Ia SNe in other galaxies to measure how far away they are and other measurements, observational cosmologists have been able to measure the rate at which our universe is expanding. Without accurate models of Type Ia SNe, these calculations would not be possible. 
@@ -64,8 +85,6 @@
   
   The goal for this research is to first create a nuclear reaction network following Shen and Bildsten's guidelines, test the network in Microphysics to see if there is a substantial change, then to run an old model and the new model with Castro using a sub-Chandrasekhar mass star to see how the results change. If the change is drastic, then we will have more science to do. 
   
-\section{Simulation Results}
-
   \subsection{Pynucastro}
     
     {\tt Aprox13} is a nuclear reaction network composed of 13 element isotopes. It begins with Helium (\ce{^4He} also known as an $\alpha$ particle) adds two \ce{^4He} to get a Carbon (\ce{^{12}C}) and one photon ($\gamma$) then continues to add $\alpha$ particles until Iron (\ce{^{56}Fe}) and a lot more $\gamma$'s are obtained. Since each isotope is connected by an $\alpha$ particle, this is called an $\alpha$ chain and earns the name 13 from the 13 isotopes on the $\alpha$ chain that it possesses. All elements that are \ce{^{24}Mg} and heavier are also connected through a process where an $\alpha$ particle hits an isotope and creates a new particle but kicks out a proton, then a different proton hits the new nucleus and one of those $\alpha$ chain isotopes are created along with a $\gamma$. In total the {\tt aprox13} network contains 22 isotopes and has proven to be a good model of stellar evolution, but Shen \& Bildsten suggest developing the reaction network more for Type Ia SNe. %Cite the heck out of Frank Timmes - AB
@@ -171,12 +190,19 @@
       \end{figure}
       
       %Compare it to the aprox13 runs and talk about it. - AB
-  
-\section{Conclusion}
+
+\section{Results and Conclusion}
+
+  % Summary of the analysis
+  % Emphasis is on the results and their interpretation, and how they relate to results in the literature
+  % Can provide an outlook, e.g. how the measurement can be improved with future measurements
+  % Good understanding of the subject and of your results
   
   Previous simulations of Type Ia SNe %explain.... - AB
   Shen \& Bildsten's paper brought light to this issue, motivating the investigation narrated in this report. After checking the accuracy of codes simulations using a network of nuclear reaction rates based off of the Shen \& Bildsten paper were used in a one zone simulation, moving to a one dimensional simulation, and culminating in an insightful two dimensional simulation. It was proven that % fill this in when results exist. -AB
   
   The next steps moving forward will be to perform this in a three dimensional simulation. Using these results we can motivate fellow scientists to use their codes to retrieve the information about brightness curves and spectra so that observational astronomer can use them for calculating astronomical distance. Through the generation of better simulations, the scientific community gains better results and can produce excellent science. 
-  
-\end{document}  
+
+\bibliography{../../Labs-scripts/Lab1/references}
+
+\end{document} 
