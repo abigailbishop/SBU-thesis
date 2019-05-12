@@ -36,11 +36,9 @@
   % Good understanding of the subject and of your results
   % NOT lengthy introduction to the problem. No sentences like 'the aim was to learn about CCDs'. No information not in the main body of the paper
   
-  Type Ia Supernovae are some of the most important astronomical events in the universe as they act as yard sticks that are light years and light years long. However, a recent paper by Ken Shen and Lars Bildsten reveals that the simulations which make these yard sticks so valuable are not fully developed and may be leading to inaccuracies in measurements. This report details the process by which nuclear astrophysics codes like Pynucastro, Microphysics, and Castro are used to test the claims of Shen \& Bildsten by simulating Type Ia Supernovae. It was found that... % gotta fill that in one in when I get results. 
+  Type Ia Supernovae are some of the most important astronomical events in the universe as they act as yard sticks that are light years and light years long. However, a paper by Ken Shen and Lars Bildsten reveals that the simulations which make these yard sticks so valuable are not fully developed and may be leading to inaccuracies in measurements \citep{shenNbildsten}. This report details the process by which nuclear astrophysics codes like Pynucastro, Microphysics, and Castro are used to test the claims of Shen \& Bildsten by simulating Type Ia Supernovae. It was found that... % gotta fill that in one in when I get results. 
   
   % Perhaps one last sentence here. -AB
-
-  Abstract
 
 \end{abstract}
 
@@ -56,7 +54,7 @@
   
   An observational astronomer can observe an event resembling a Type Ia SNe and use its spectrum to confirm it is a Type Ia Supernovae. The astronomer can then take the brightness of the explosion and use it to calculate how far away the supernovae is. By using Type Ia SNe in other galaxies to measure how far away they are and other measurements, observational cosmologists have been able to measure the rate at which our universe is expanding. Without accurate models of Type Ia SNe, these calculations would not be possible. 
   
-  The dilemma is that not all Type Ia Supernovae wait until their mass reaches  the Chandrasekhar mass of 1.4$M_{\odot}$ before they explode. Some explode at lower masses, in the subChandra range where their mass is less than 1.4$M_{\odot}$. This means the overall brightness and the spectrum of the explosion is slightly different from the Chandrasekhar mass Type Ia Supernovae. If an observational astronomer uses a subChandra Type Ia supernovae to measure distance, they will calculate a larger distance if they assume it is a Chandrasekhar mass star. This means, as computational nuclear astrophysicists, we need to model subChandra Type Ia SNe to help the observational astronomers make accurate calculations of astronomical distance. This has been done before, however, a paper by Ken Shen and Lars Bildsten has pointed out that previous simulations have not included as many possible nuclear reactions as it should have to make the calculations accurate. In this thesis I discuss the methods by which we use a computer code to simulate Type Ia SNe with the elements suggested by Shen and Bildsten. 
+  The dilemma is that not all Type Ia Supernovae wait until their mass reaches  the Chandrasekhar mass of 1.4$M_{\odot}$ before they explode. Some explode at lower masses, in the subChandra range where their mass is less than 1.4$M_{\odot}$. This means the overall brightness and the spectrum of the explosion is slightly different from the Chandrasekhar mass Type Ia Supernovae. If an observational astronomer uses a subChandra Type Ia supernovae to measure distance, they will calculate a larger distance if they assume it is a Chandrasekhar mass star. This means, as computational nuclear astrophysicists, we need to model subChandra Type Ia SNe to help the observational astronomers make accurate calculations of astronomical distance. This has been done before, however, a paper by Ken Shen and Lars Bildsten has pointed out that previous simulations have not included as many possible nuclear reactions as it should have to make the calculations accurate \citep{shenNbildsten}. In this thesis I discuss the methods by which we use a computer code to simulate Type Ia SNe with the elements suggested by Shen and Bildsten. 
 
 \section{Codes}
 
@@ -80,7 +78,7 @@
   
 \section{Motivation}
   
-  As previously mentioned, Type Ia SNe are critical to measuring large astronomical distances. Observational astronomers rely heavily on accurate estimations for what they observe to make scientific claims to the data. In a 2016 paper by Lars Bildsten and Kenneth Shen, they theorized that the three elements used to simulate Type Ia supernovae was not enough to accurately simulate the spectra and light curve of a Type Ia supernovae. %Cite Shen and Bildsten - AB
+  As previously mentioned, Type Ia SNe are critical to measuring large astronomical distances. Observational astronomers rely heavily on accurate estimations for what they observe to make scientific claims to the data. In a 2009 paper by Lars Bildsten and Kenneth Shen, they theorized that the three elements used to simulate Type Ia supernovae was not enough to accurately simulate the spectra and light curve of a Type Ia supernovae \citep{shenNbildsten}. 
   Additionally, not all Type Ia SNe occur when the WD becomes a total of 1.4 $M_{\odot}$, sometimes the explosions set off, they detonate, before the Chandrasekhar mass is reached. This means that thesIt is critical that accurate models of Type Ia SNe are obtained in order for observational astronomers to learn about the universe accurately. 
   
   The goal for this research is to first create a nuclear reaction network following Shen and Bildsten's guidelines, test the network in Microphysics to see if there is a substantial change, then to run an old model and the new model with Castro using a sub-Chandrasekhar mass star to see how the results change. If the change is drastic, then we will have more science to do. 
@@ -89,7 +87,7 @@
     
     {\tt Aprox13} is a nuclear reaction network composed of 13 element isotopes. It begins with Helium (\ce{^4He} also known as an $\alpha$ particle) adds two \ce{^4He} to get a Carbon (\ce{^{12}C}) and one photon ($\gamma$) then continues to add $\alpha$ particles until Iron (\ce{^{56}Fe}) and a lot more $\gamma$'s are obtained. Since each isotope is connected by an $\alpha$ particle, this is called an $\alpha$ chain and earns the name 13 from the 13 isotopes on the $\alpha$ chain that it possesses. All elements that are \ce{^{24}Mg} and heavier are also connected through a process where an $\alpha$ particle hits an isotope and creates a new particle but kicks out a proton, then a different proton hits the new nucleus and one of those $\alpha$ chain isotopes are created along with a $\gamma$. In total the {\tt aprox13} network contains 22 isotopes and has proven to be a good model of stellar evolution, but Shen \& Bildsten suggest developing the reaction network more for Type Ia SNe. %Cite the heck out of Frank Timmes - AB
     
-    The study began through the use of Pynucastro to create the {\tt subch} network, standing for sub-Chandrasekhar. The network is composed of 8 reactions, each as suggested by Shen \& Bildsten. %Cite Shen and Bildsten - AB
+    The study began through the use of Pynucastro to create the {\tt subch} network, standing for sub-Chandrasekhar. The network is composed of 8 reactions, each as suggested by Shen \& Bildsten \citep{shenNbildsten}. 
     
     \begin{align}
             \ce{3 ^4He &->  ^{12}C + 2\gamma } \\ 
@@ -124,37 +122,34 @@
       \begin{figure}
         \centering
         \includegraphics[width=5in]{images/react_aprox13_test13_ureca_tol-rel_xn1.png}
-        \caption{Relative error over time of the \ce{^4H3} (in black), \ce{^{12}C} (in purple), and \ce{^{16}O} (in blue) mass fractions run in simulations with a tolerance of $10^{-9}$ (solid line), $10^{-6}$ (dashed line), and $10^{-3}$ (dotted line) with respect to the true values calculated by a simulation with a tolerance of $10^{-12}$. The lower the value, the closer the result is to the true value. % Should I add the bit about why 10^-9 is the best here or leave that outside of the figure caption?
-        %The relative error of the simulation with a tolerance of $10^{-12}$ is consistently below $10^{-3}$ and drops as low as $10^{-8} at times without taking much longer to run than the simulations with tolerances of $10^{-6}$ and $10^{-3}$.
+        \caption{Relative error over time of the \ce{^4H3} (in black), \ce{^{12}C} (in purple), and \ce{^{16}O} (in blue) mass fractions run in simulations with a tolerance of $10^{-9}$ (solid line), $10^{-6}$ (dashed line), and $10^{-3}$ (dotted line) with respect to the true values calculated by a simulation with a tolerance of $10^{-12}$. The lower the value, the closer the result is to the true value.
           }
         \label{fig:relativeerror}
       \end{figure}  
   
-      From Figure~\ref{fig:relativeerror}, one can see that the solid lines, corresponding with the simulation using a tolerance of $10^{-9}$, are consistently the lowest. The corresponding run did not require very much run time and produced low-error results, therefore it is concluded that a tolerance of $10^{-9}$ is acceptable for the codes going forwards. 
+      From Figure~\ref{fig:relativeerror}, one can see that the solid lines, corresponding with the simulation using a tolerance of $10^{-9}$, are consistently the lowest. The relative error of the simulation with a tolerance of $10^{-9}$ is consistently below $10^{-3}$ and drops as low as $10^{-8}$ at times without taking much longer to run than the simulations with tolerances of $10^{-6}$ and $10^{-3}$. Therefore, it is concluded that a tolerance of $10^{-9}$ is acceptable for the codes going forwards. 
   
     \subsection{Using Mass Fraction Evolution to Justify Motivation}
     
-      The next step with the {\tt burn\_cell} tests is to test if the {\tt subch} network is producing results worth investigating. The main ingredients to the simulation that Shen \& Bildsten encouraged were \ce{^{14}C} and \ce{^{14}N}. % Cite Shen and Bildsten - AB
-      Figure~\ref{fig:microphysicsX} shows the time evolution of mass fractions, $X$, for each of the eleven isotopes in the {\tt subch} network for three different {\tt burn\_cell} simulations. The solid line corresponds to a simulation without \ce{^{14}C} and \ce{^{14}N}, the short dashed line adds some \ce{^{14}N} and the long dashed line adds both \ce{^{14}C} and \ce{^{14}N}. If this Shen \& Bildsten's theory is correct, we shouldn't see 11 clean and solid lines, but many more solid and dashed lines. Indeed, Figure~\ref{fig:microphysicsX} shows this and pushes us to take these simulations to the next level.
+      The next step with the {\tt burn\_cell} tests is to test if the {\tt subch} network is producing results worth investigating. The main ingredients to the simulation that Shen \& Bildsten encouraged were \ce{^{14}C} and \ce{^{14}N} \citep{shenNbildsten}.
+      Figure~\ref{fig:microphysicsX} shows the time evolution of mass fractions, $X$, for each of the eleven isotopes in the {\tt subch} network for three different {\tt burn\_cell} simulations. One simulation is run without \ce{^{14}C} and \ce{^{14}N}, one with some \ce{^{14}N}, and the last with both \ce{^{14}C} and \ce{^{14}N}. If this Shen \& Bildsten's theory is correct, we shouldn't see 11 clean and solid lines, but many more solid and dashed lines. In Figure~\ref{fig:microphysicsX}, seeing a combination of solid, dashed, and dotted lines at different orders of magnitudes for many elements implies that the incorporation of \ce{^{14}C} and \ce{^{14}O} is important. 
       
       %Say what other initial conditions you needed like temperature and such. -AB
       
       \begin{figure}
         \centering
-        \includegraphics[width=5in]{images/subch_nC14nN14_xn_tol-10.png}
-        \caption{Mass fraction, $X$, evolution over time for the 11 elements (differentiated by color) in the {\tt subch} network for three different {\tt burn\_cell} simulations: one without \ce{^{14}C} and \ce{^{14}O} (solid lines), one with both \ce{^{14}C} and \ce{^{14}O} (dashed line), and with \ce{^{14}O} but no \ce{^{14}C} (dotted line). % To add or not to add the short analysis
-        % If incorporating \ce{^{14}C} and \ce{^{14}O} has no effect on the $X$ evolution there will be only 11 solid colored lines. Seeing a combination of solid, dashed, and dotted lines at different orders of magnitudes for many elements implies that the incorporation of \ce{^{14}C} and \ce{^{14}O} is important. 
+        \includegraphics[width=6in]{images/subch_nC14nN14_xn_tol-10.png}
+        \caption{Mass fraction, $X$, evolution over time for the 11 elements (differentiated by color) in the {\tt subch} network for three different {\tt burn\_cell} simulations: one without \ce{^{14}C} and \ce{^{14}O} (solid lines), one with both \ce{^{14}C} and \ce{^{14}O} (dashed line), and with \ce{^{14}O} but no \ce{^{14}C} (dotted line). 
           }
         \label{fig:microphysicsX}
       \end{figure} 
       
-      In addition to the mass fraction evolution, the rate of energy generated by the zone in the {\tt burn\_cell} simulation is plotted as a function of time. In Figure~\ref{fig:energygeneration}, the solid line again refers to the a simulation without \ce{^{14}C} and \ce{^{14}N}, the short dashed line to a simulation with \ce{^{14}N}, and the long dashed line to a simulation with both \ce{^{14}C} and \ce{^{14}N}. From Figure~\ref{fig:energygeneration} one can see that the simulations with \ce{^{14}C} and \ce{^{14}N}, the energy generated by this zone peaks sooner and has a lower peak. This is a substantial effect and further supports the motivation of Shen \& Bildsten. %Cite Shen and Bildsten - AB
+      In addition to the mass fraction evolution, the rate of energy generated by the zone in the {\tt burn\_cell} simulation is plotted as a function of time. Once more, this is done for a simulation without \ce{^{14}C} and \ce{^{14}N}, adding only \ce{^{14}N}, and adding both \ce{^{14}C} and \ce{^{14}N}. From Figure~\ref{fig:energygeneration} one can see that the simulations with \ce{^{14}C} and \ce{^{14}N}, the energy generated by this zone peaks sooner and has a lower peak.  This shows that when \ce{^{14}C} and \ce{^{14}O} are incorporated into the simulations of Type Ia SNe, they will generate energy faster, use their nuclear energy more quickly, and have a smaller maximum energy generation rate than simulations without these elements. This is another nudge in the direction of running a full scale simulation. 
       
       \begin{figure}
         \centering
         \includegraphics[width=5in]{images/subch_nC14nN14_edot_tol-10.png}
         \caption{The rate of energy generated by the zone in the {\tt burn\_cell} simulation as a function of time for the run without \ce{^{14}C} and \ce{^{14}O} (solid lines), with both \ce{^{14}C} and \ce{^{14}O} (dashed line), and with \ce{^{14}O} but no \ce{^{14}C} (dotted line).
-        % This shows that when \ce{^{14}C} and \ce{^{14}O} are incorporated into the simulations of Type Ia SNe, they generate energy faster, use their nuclear energy more quickly, and have a smaller maximum energy generation rate than simulations without these elements. This is another nudge in the direction of running a full scale simulation. 
           }
         \label{fig:energygeneration}
       \end{figure} 
@@ -167,12 +162,17 @@
     
       Using the Castro science problem called "Detonation", a simulation of a flame propagating from left to right was initialized with the {\tt subch} network. As shown in Figure~\ref{fig:detonation}, when the left side of the helium layer is heated to 2 billion Kelvin, the energy released from nuclear reactions powers the flame wave to the right side of the screen and off of the page. 
       
-      \begin{figure}
-        \centering
-        \includegraphics[width=0.5in]{}
-        \caption{}
-        \label{fig:detonation}
-      \end{figure}
+    \begin{figure}
+      \gridline{
+        \fig{images/flame_subch_plt_0}{0.7\textwidth}{(a)}
+        }
+      \gridline{
+        \fig{images/flame_subch_plt_110}{0.48\textwidth}{(b)}
+        \fig{images/flame_subch_plt_520}{0.48\textwidth}{(c)}
+        }
+      \caption{The above images depict a flame wave (shown by a shelf of temperature on the left at 2 billion K) propagating in the right direction at the beginning of the simulation (Figure (a)), after 0.002 seconds (Figure (b)), and after 0.01 seconds (Figure (c)).}
+      \label{fig:detonation}
+    \end{figure}
       
       Now, knowing that a mild temperature perturbation can ignite a helium layer, this simulation can be taken to two dimensions, which is a big step. These one dimensional simulations take a couple minutes to run on an average computer but the two dimensional simulations will take much longer. 
     
@@ -183,9 +183,14 @@
       %Talk about the size and magnitude of the perturbation - AB
       
       \begin{figure}
-        \centering
-        \includegraphics[width=5in]{}
-        \caption{}
+        \gridline{
+          \fig{images/subch_20190412_plt00100_Temp_slice}{0.48\textwidth}{(a)}
+          \fig{images/subch_20190412_plt122900_Temp_slice}{0.48\textwidth}{(b)}
+          }
+        \caption{These plots were created using {\tt amrvis} which can be found in the AMReX coding package. %Cite AMRex
+          They depict the WD as a half circle in the left middle and use color to display the temperature in the plane. A redder color is a cooler temperature and a yellow color represents warmer temperatures. Note that the values associated with the color scale of the temperature may change between pictures. 
+          }
+        % PLEASE NOTE THAT THESE IMAGES ARE FROM APRIL AND ARE NOT UP TO DATE. THEY ARE PLACEHOLDERS. -AB
         \label{fig:subchsims}
       \end{figure}
       
@@ -199,10 +204,10 @@
   % Good understanding of the subject and of your results
   
   Previous simulations of Type Ia SNe %explain.... - AB
-  Shen \& Bildsten's paper brought light to this issue, motivating the investigation narrated in this report. After checking the accuracy of codes simulations using a network of nuclear reaction rates based off of the Shen \& Bildsten paper were used in a one zone simulation, moving to a one dimensional simulation, and culminating in an insightful two dimensional simulation. It was proven that % fill this in when results exist. -AB
+  Shen \& Bildsten's paper brought light to this issue, motivating the investigation narrated in this report. After checking the accuracy of codes simulations using a network of nuclear reaction rates based off of the Shen \& Bildsten paper were used in a one zone simulation, moving to a one dimensional simulation, and culminating in an insightful two dimensional simulation \citep{shenNbildsten}. It was proven that % fill this in when results exist. -AB
   
   The next steps moving forward will be to perform this in a three dimensional simulation. Using these results we can motivate fellow scientists to use their codes to retrieve the information about brightness curves and spectra so that observational astronomer can use them for calculating astronomical distance. Through the generation of better simulations, the scientific community gains better results and can produce excellent science. 
 
-\bibliography{../../Labs-scripts/Lab1/references}
+\bibliography{references}
 
 \end{document} 
