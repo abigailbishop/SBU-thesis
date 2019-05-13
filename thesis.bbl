@@ -9,4 +9,34 @@
 {Shen}, K.~J., \& {Bildsten}, L. 2009, \apj, 699, 1365,
   \dodoi{10.1088/0004-637X/699/2/1365}
 
+\bibitem[{the AMReX Development~Team {et~al.}(2019)the AMReX Development~Team,
+  Almgren, Beckner, Blaschke, Chan, Day, Friesen, Gott, Graves, Katz, Myers,
+  Nguyen, Nonaka, Rosso, Williams, Zhang, \& Zingale}]{AMREXcodes}
+the AMReX Development~Team, Almgren, A., Beckner, V., {et~al.} 2019,
+  AMReX-Codes/amrex: AMReX 19.05.1, \dodoi{10.5281/zenodo.2754709}.
+\newblock \url{https://doi.org/10.5281/zenodo.2754709}
+
+\bibitem[{the Castro Development~Team {et~al.}(2019)the Castro
+  Development~Team, Almgren, Barrios~Sazo, Bell, Harpole, Katz, Willcox, Zhang,
+  \& Zingale}]{castro}
+the Castro Development~Team, Almgren, A., Barrios~Sazo, M., {et~al.} 2019,
+  AMReX-Astro/Castro: Castro 19.05, \dodoi{10.5281/zenodo.2656472}.
+\newblock \url{https://doi.org/10.5281/zenodo.2656472}
+
+\bibitem[{the StarKiller Microphysics Development~Team {et~al.}(2019)the
+  StarKiller Microphysics Development~Team, Bishop, Fields, Jacobs, Katz, Li,
+  Malone, Timmes, Willcox, \& Zingale}]{Microphysics}
+the StarKiller Microphysics Development~Team, Bishop, A., Fields, C.~E.,
+  {et~al.} 2019, starkiller-astro/Microphysics: Microphysics 19.05,
+  \dodoi{10.5281/zenodo.2656476}.
+\newblock \url{https://doi.org/10.5281/zenodo.2656476}
+
+\bibitem[{Timmes(2019)}]{timmes}
+Timmes, F.~X. 2019, Nuclear Reaction Networks.
+\newblock \url{http://cococubed.asu.edu/code_pages/burn.shtml}
+
+\bibitem[{{Willcox} \& {Zingale}(2018)}]{pynucastro}
+{Willcox}, D.~E., \& {Zingale}, M. 2018, arXiv e-prints, arXiv:1803.08920.
+\newblock \doarXiv{1803.08920}
+
 \end{thebibliography}
