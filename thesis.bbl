@@ -5,9 +5,70 @@
 \providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
 \providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
 
+\bibitem[{{Almgren} {et~al.}(2010){Almgren}, {Beckner}, {Bell}, {Day},
+  {Howell}, {Joggerst}, {Lijewski}, {Nonaka}, {Singer}, \& {Zingale}}]{castro}
+{Almgren}, A.~S., {Beckner}, V.~E., {Bell}, J.~B., {et~al.} 2010, \apj, 715,
+  1221, \dodoi{10.1088/0004-637X/715/2/1221}
+
+\bibitem[{Burrows {et~al.}(2012)Burrows, Dolence, \& Murphy}]{corecollapse1}
+Burrows, A., Dolence, J.~C., \& Murphy, J.~W. 2012, The Astrophysical Journal,
+  759, 5, \dodoi{10.1088/0004-637x/759/1/5}
+
+\bibitem[{Cyburt {et~al.}(2010)Cyburt, Amthor, Ferguson, Meisel, Smith, Warren,
+  Heger, Hoffman, Rauscher, Sakharuk, Schatz, Thielemann, \& Wiescher}]{JINA}
+Cyburt, R.~H., Amthor, A.~M., Ferguson, R., {et~al.} 2010, The Astrophysical
+  Journal Supplement Series, 189, 240, \dodoi{10.1088/0067-0049/189/1/240}
+
+\bibitem[{Dolence {et~al.}(2013)Dolence, Burrows, Murphy, \&
+  Nordhaus}]{corecollapse2}
+Dolence, J.~C., Burrows, A., Murphy, J.~W., \& Nordhaus, J. 2013, The
+  Astrophysical Journal, 765, 110, \dodoi{10.1088/0004-637x/765/2/110}
+
+\bibitem[{{Fink} {et~al.}(2007){Fink}, {Hillebrandt}, \&
+  {R{\"o}pke}}]{doubledet2}
+{Fink}, M., {Hillebrandt}, W., \& {R{\"o}pke}, F.~K. 2007, \aap, 476, 1133,
+  \dodoi{10.1051/0004-6361:20078438}
+
+\bibitem[{{Jacobs} {et~al.}(2016){Jacobs}, {Zingale}, {Nonaka}, {Almgren}, \&
+  {Bell}}]{subch2}
+{Jacobs}, A.~M., {Zingale}, M., {Nonaka}, A., {Almgren}, A.~S., \& {Bell},
+  J.~B. 2016, \apj, 827, 84, \dodoi{10.3847/0004-637X/827/1/84}
+
+\bibitem[{Katz {et~al.}(2016)Katz, Zingale, Calder, Swesty, Almgren, \&
+  Zhang}]{merger}
+Katz, M.~P., Zingale, M., Calder, A.~C., {et~al.} 2016, The Astrophysical
+  Journal, 819, 94, \dodoi{10.3847/0004-637x/819/2/94}
+
+\bibitem[{{Kromer} {et~al.}(2010){Kromer}, {Sim}, {Fink}, {R{\"o}pke},
+  {Seitenzahl}, \& {Hillebrandt}}]{doubledet1}
+{Kromer}, M., {Sim}, S.~A., {Fink}, M., {et~al.} 2010, \apj, 719, 1067,
+  \dodoi{10.1088/0004-637X/719/2/1067}
+
+\bibitem[{Perlmutter {et~al.}(1999)Perlmutter, Aldering, Goldhaber, Knop,
+  Nugent, Castro, Deustua, Fabbro, Goobar, Groom, Hook, Kim, Kim, Lee, Nunes,
+  Pain, Pennypacker, Quimby, Lidman, Ellis, Irwin, McMahon, Ruiz-Lapuente,
+  Walton, Schaefer, Boyle, Filippenko, Matheson, Fruchter, Panagia, Newberg,
+  Couch, \& Project}]{acceleratingUniverse2}
+Perlmutter, S., Aldering, G., Goldhaber, G., {et~al.} 1999, The Astrophysical
+  Journal, 517, 565, \dodoi{10.1086/307221}
+
+\bibitem[{{Phillips}(1993)}]{SNeSpectra}
+{Phillips}, M.~M. 1993, \apjl, 413, L105, \dodoi{10.1086/186970}
+
+\bibitem[{Riess {et~al.}(1998)Riess, Filippenko, Challis, Clocchiatti, Diercks,
+  Garnavich, Gilliland, Hogan, Jha, Kirshner, Leibundgut, Phillips, Reiss,
+  Schmidt, Schommer, Smith, Spyromilio, Stubbs, Suntzeff, \&
+  Tonry}]{acceleratingUniverse1}
+Riess, A.~G., Filippenko, A.~V., Challis, P., {et~al.} 1998, The Astronomical
+  Journal, 116, 1009, \dodoi{10.1086/300499}
+
 \bibitem[{{Shen} \& {Bildsten}(2009)}]{shenNbildsten}
 {Shen}, K.~J., \& {Bildsten}, L. 2009, \apj, 699, 1365,
   \dodoi{10.1088/0004-637X/699/2/1365}
+
+\bibitem[{{Strang}(1968)}]{strang}
+{Strang}, G. 1968, SIAM Journal on Numerical Analysis, 5, 506,
+  \dodoi{10.1137/0705041}
 
 \bibitem[{the AMReX Development~Team {et~al.}(2019)the AMReX Development~Team,
   Almgren, Beckner, Blaschke, Chan, Day, Friesen, Gott, Graves, Katz, Myers,
@@ -15,13 +76,6 @@
 the AMReX Development~Team, Almgren, A., Beckner, V., {et~al.} 2019,
   AMReX-Codes/amrex: AMReX 19.05.1, \dodoi{10.5281/zenodo.2754709}.
 \newblock \url{https://doi.org/10.5281/zenodo.2754709}
-
-\bibitem[{the Castro Development~Team {et~al.}(2019)the Castro
-  Development~Team, Almgren, Barrios~Sazo, Bell, Harpole, Katz, Willcox, Zhang,
-  \& Zingale}]{castro}
-the Castro Development~Team, Almgren, A., Barrios~Sazo, M., {et~al.} 2019,
-  AMReX-Astro/Castro: Castro 19.05, \dodoi{10.5281/zenodo.2656472}.
-\newblock \url{https://doi.org/10.5281/zenodo.2656472}
 
 \bibitem[{the StarKiller Microphysics Development~Team {et~al.}(2019)the
   StarKiller Microphysics Development~Team, Bishop, Fields, Jacobs, Katz, Li,
@@ -38,5 +92,10 @@ Timmes, F.~X. 2019, Nuclear Reaction Networks.
 \bibitem[{{Willcox} \& {Zingale}(2018)}]{pynucastro}
 {Willcox}, D.~E., \& {Zingale}, M. 2018, arXiv e-prints, arXiv:1803.08920.
 \newblock \doarXiv{1803.08920}
+
+\bibitem[{{Zingale} {et~al.}(2013){Zingale}, {Nonaka}, {Almgren}, {Bell},
+  {Malone}, \& {Orvedahl}}]{subch1}
+{Zingale}, M., {Nonaka}, A., {Almgren}, A.~S., {et~al.} 2013, \apj, 764, 97,
+  \dodoi{10.1088/0004-637X/764/1/97}
 
 \end{thebibliography}
