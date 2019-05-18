@@ -36,9 +36,7 @@
   % Good understanding of the subject and of your results
   % NOT lengthy introduction to the problem. No sentences like 'the aim was to learn about CCDs'. No information not in the main body of the paper
   
-  Type Ia Supernovae are some of the most important astronomical events in the universe as they serve as standard candles that observational astronomers can use to make distance calculations. There are three main models of Type Ia supernovae, which include white dwarf mergers, sub-Chandrasekhar double detonations, and Chandrasekhar mass single detonations \citep{doubledet1, doubledet2}. A paper by Ken Shen and Lars Bildsten reveals that the simulations which make these supernovae so valuable are not fully developed and may be leading to inaccuracies in measurements \citep{shenNbildsten}. This report details the process by which nuclear astrophysics codes like Pynucastro, Microphysics, and Castro are used to test the claims of Shen \& Bildsten by simulating Type Ia Supernovae using the sub-Chandrasekhar double detonation model. It was found that... % gotta fill that in one in when I get results. 
-  
-  % Perhaps one last sentence here. -AB
+  Type Ia Supernovae are some of the most important astronomical events in the universe as they serve as standard candles that observational astronomers can use to make distance calculations. There are three main models of Type Ia supernovae, which include white dwarf mergers, sub-Chandrasekhar double detonations, and Chandrasekhar mass single detonations \citep{doubledet1, doubledet2}. A paper by Ken Shen and Lars Bildsten reveals that the simulations which make these supernovae so valuable are not fully developed and may be leading to inaccuracies in measurements \citep{shenNbildsten}. This report details the process by which nuclear astrophysics codes like Pynucastro, Microphysics, and Castro are used to test the claims of Shen \& Bildsten by simulating Type Ia Supernovae using the sub-Chandrasekhar double detonation model. Currently, it is clear that the initial detonation is propagating through the helium layer of a sub-Chandrasekhar mass WD. As the simulation continues to progress we hope to see the second detonation then to move on to higher level simulations.
 
 \end{abstract}
 
@@ -146,8 +144,7 @@
           }
         \label{fig:energygeneration}
       \end{figure} 
-      
-\newpage
+
   
   \subsection{Multi-dimensional simulations with Castro}
   
@@ -158,31 +155,25 @@
       Using the Castro science problem called ``Detonation", a simulation of a shock wave propagating from left to right was initialized with the {\tt subch} network. The layer of helium that this wave is propagating through has a density of $\rho = 1 \time 10^6 \frac{g}{cm^3}$, has a shock wave with a temperature of $T = 2 \times 10^9 K$ (on the left), and has a resting temperature of $T = 0.05 \times 10^9 K$ (on the right). As shown in Figure~\ref{fig:detonation}, the energy released from nuclear reactions in the detonation powers a wave to the right side of the screen and off of the page. 
       
     \begin{figure}
-      \gridline{
-        \fig{images/flame_subch_plt_0}{0.7\textwidth}{(a)}
-        }
-      \gridline{
-        \fig{images/flame_subch_plt_110}{0.48\textwidth}{(b)}
-        \fig{images/flame_subch_plt_520}{0.48\textwidth}{(c)}
-        }
+      \centering
+      \includegraphics[width=5in]{images/flame-thesis}
       \caption{The above images depict a detonation wave (shown by a shelf of temperature on the left at 2 billion K) propagating in the right direction at the beginning of the simulation (Figure (a)), after 0.002 seconds (Figure (b)), and after 0.01 seconds (Figure (c)).}
       \label{fig:detonation}
     \end{figure}
       
       Now, knowing that a mild temperature perturbation can ignite a helium layer, this simulation can be taken to two dimensions, which is a big step. These one dimensional simulations take a couple minutes to run on an average computer but the two dimensional simulations will take much longer, even on a much larger computer. 
-      
-\newpage
+    
     
     \subsubsection{2-Dimensional Simulations}
   
-      The two dimensional simulations are completed by wrapping a \ce{^{12}C} and \ce{^{16}O} WD core in a thick layer of \ce{^4He} and simulating it in axisymmetric coordinates. The burning is initiated by a hot temperature perturbation at the interface between the helium shell and the core along the north pole of the star. Figure~\ref{fig:model} shows this initial model. 
+      The two dimensional simulations are completed by wrapping a \ce{^{12}C} and \ce{^{16}O} WD core in a thick layer of \ce{^4He} and simulating it in axisymmetric coordinates. The burning is initiated by a hot temperature perturbation at the interface between the helium shell and the core along the north pole of the star. Figure~\ref{fig:subchsims} shows this setup. 
       
       The domain of simulation is $1.25 \times 10^9 cm$ wide by $2.5 \times 10^9 cm$ high, 3 levels of refinement are used (more levels, more accurate, longer run time), a perturbation temperature factor of 80, a perturbation radius factor of 8, centered at a distace of 0.35 billion centimeters from the center from the star. Using the {\tt subch} network to simulate this, the images in Figure~\ref{fig:subchsims} resulted. At the top of the star in the second image, it is clear that the shock wave is propagating across the helium layer of the WD and that the front of the shock wave has a temperatures near $2.5 \times 10^9$ Which is very high and very promising. 
       
       \begin{figure}
         \gridline{
-          \fig{images/subch_20190412_plt00100_Temp_slice}{0.48\textwidth}{(a)}
-          \fig{images/subch_20190412_plt122900_Temp_slice}{0.48\textwidth}{(b)}
+          \fig{images/subch_20190505_plt00000_Temp_slice}{0.48\textwidth}{(a)}
+          \fig{images/subch_20190505_plt95900_Temp_slice}{0.48\textwidth}{(b)}
           }
         \caption{These plots were created using {\tt amrvis} which can be found in the AMReX coding package \citep{AMREXcodes}. They depict the WD as a half circle in the left middle and use color to display the temperature in the plane. A redder color is a cooler temperature and a yellow color represents warmer temperatures. Note that the values associated with the color scale of the temperature may change between pictures. 
           }
@@ -192,6 +183,8 @@
       
       %Compare it to the aprox13 runs and talk about it. - AB
 
+\newpage
+
 \section{Conclusion}
 
   % Summary of the analysis
@@ -199,13 +192,18 @@
   % Can provide an outlook, e.g. how the measurement can be improved with future measurements
   % Good understanding of the subject and of your results
   
-  Shen \& Bildsten's paper brought light that simulations of Type Ia SNe needed more work, motivating the investigation narrated in this report. After checking the accuracy of codes used, simulations using a network of nuclear reaction rates based off of the Shen \& Bildsten paper were used in a one zone simulation, moving to a one dimensional simulation, and culminating in an insightful two dimensional simulation \citep{shenNbildsten}. It was proven that % fill this in when results exist. -AB
+  Shen \& Bildsten's paper brought light that simulations of Type Ia SNe needed more work, motivating the investigation narrated in this report. After checking the accuracy of codes used, simulations using a network of nuclear reaction rates based off of the Shen \& Bildsten paper were used in a one zone simulation, moving to a one dimensional simulation, and culminating in an insightful two dimensional simulation \citep{shenNbildsten}. After a few months of struggling with and manipulating the Castro code and inputs value, we reminded ourselves of the importance of setting accurate lower limits for qualities such as density and reminding the code to reevaluate the adaptive mesh refinement gridding frequently. Now that the simulation is running, it is shown that the shock wave will propagate through the helium layer of the WD. Simulations are still running so we will have to wait for them to finish before we can see if the core detonates and causes the SNe. 
   
   The next steps moving forward will be to perform this in two dimensions with rotation involved comparing the results between runs with different Helium layer masses. Afterwards, this may be promoted to a three dimensional simulation. Using these results we can motivate fellow scientists to use their codes to retrieve the information about brightness curves and spectra so that observational astronomer can use them for calculating astronomical distance. Through the generation of better simulations, the scientific community gains better results and can produce excellent science. 
   
+  
+ \newpage
+  
 \section{Acknowledgements}
 
-Michael Zingale, Donald Willcox, Adam Jacobs
+I would like to thank Dr. Donald Willcox and Dr. Adam Jacobs for all of their help and guidance in regards to the usage of Pynucastro, Microphysics, and Castro. I would like to thank Dr. Anja von der Linden and Elizabeth Bojza for reading my thesis. Lastly, I would like to offer my greatest thanks to Dr. Michael Zingale for helping me with this thesis, for being my researchadvisor for the past two years, and for being an absolutely amazing mentor. 
+
+\newpage
 
 \bibliography{references}
 
