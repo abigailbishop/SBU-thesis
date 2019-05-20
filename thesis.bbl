@@ -5,6 +5,11 @@
 \providecommand{\doeprint}[1]{\href{http://ascl.net/#1}{\nolinkurl{http://ascl.net/#1}}}
 \providecommand{\doarXiv}[1]{\href{https://arxiv.org/abs/#1}{\nolinkurl{https://arxiv.org/abs/#1}}}
 
+\bibitem[{{Acharova} {et~al.}(2012){Acharova}, {Mishurov}, \&
+  {Kovtyukh}}]{ironhalfuniverse}
+{Acharova}, I.~A., {Mishurov}, Y.~N., \& {Kovtyukh}, V.~V. 2012, \mnras, 420,
+  1590, \dodoi{10.1111/j.1365-2966.2011.20161.x}
+
 \bibitem[{{Almgren} {et~al.}(2010){Almgren}, {Beckner}, {Bell}, {Day},
   {Howell}, {Joggerst}, {Lijewski}, {Nonaka}, {Singer}, \& {Zingale}}]{castro}
 {Almgren}, A.~S., {Beckner}, V.~E., {Bell}, J.~B., {et~al.} 2010, \apj, 715,
